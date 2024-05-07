@@ -21,10 +21,11 @@ async function calculatePrice({ startDate, endDate }) {
   let price = document.getElementById("price").value;
   const additionalDiscount =
     document.getElementById("additional-discount").value || 0;
+  const discountNumber = document.getElementById("discount-number").value || 0;
 
   for (let year = startDateValue; year <= endDateValue; year++) {
     const inflation = await getInflationForYear(year);
-    const discount = 15 - inflation;
+    const discount = Number(discountNumber) - inflation;
     price -= price * (discount / 100);
   }
 
