@@ -5,6 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liczenie cen</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body></body>
+  <body>
+    <main class="content">
+      <h1 class="header">Obliczanie ceny</h1>
+
+      <form class="form" action="">
+        <label class="label" for="start-date">Rok kupna:</label>
+        <input class="input" type="number" id="start-date" name="start-date" />
+        <label class="label" for="end-date">Rok sprzedaży:</label>
+        <input class="input" type="number" id="end-date" name="end-date" />
+        <label class="label" for="price">Cena kupna:</label>
+        <input
+          class="input"
+          type="number"
+          id="price"
+          name="price"
+          min="0"
+          step="0.01"
+          value="1000"
+        />
+        <label class="label" for="additional-discount"
+          >Dodatkowa obniżka (%):</label
+        >
+        <input
+          class="input"
+          type="number"
+          id="additional-discount"
+          name="additional-discount"
+          min="0"
+          max="100"
+          step="0.01"
+        />
+        <input class="button" id="calculate" type="button" value="Oblicz" />
+      </form>
+      <p id="result"></p>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
